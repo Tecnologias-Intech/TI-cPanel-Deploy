@@ -1,0 +1,15 @@
+export enum DeploymentStatus {
+  PENDING = 'pending',
+  SETTING_VERSION = 'setting_version',
+  GENERATE_PR = 'generate_pr',
+  APPROVE_PR = 'approve_pr',
+  MERGE_PR = 'merge_pr',
+  INSTALLING_DEPS = 'installing_deps',
+  BUILD_APP = 'build_app',
+  DEPLOY_SETUP = 'deploy_setup',
+  GENERATE_RELEASE_N_TAG = 'generate_release_n_tag',
+  UPDATE_INDEXES = 'update_indexes',
+  DEPLOY_APP = 'deploy_app',
+  UPDATE_DATABASE = 'update_database',
+  DEPLOYED = 'deployed',
+}

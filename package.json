@@ -1,0 +1,29 @@
+{
+  "name": "ti-deploy-cpanel",
+  "version": "1.0.0",
+  "description": "Workflow for Tecnologías Intech Deployments to cPanel",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "package": "ncc build src/main.js --license licenses.txt",
+    "lint": "eslint src/**/*.ts",
+    "all": "npm run build && npm run package"
+  },
+  "author": "Ismael Pérez",
+  "license": "ISC",
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "@actions/exec": "^1.1.1",
+    "@actions/github": "^6.0.0",
+    "axios": "^1.13.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.4",
+    "@typescript-eslint/eslint-plugin": "^6.13.2",
+    "@typescript-eslint/parser": "^6.13.2",
+    "@vercel/ncc": "^0.36.1",
+    "eslint": "^8.55.0",
+    "typescript": "^5.3.3"
+  }
+}

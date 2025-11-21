@@ -1,0 +1,65 @@
+name: 'TI Deploy'
+description: "Runs the complete flow of new version for firebase projects deployment."
+author: 'Ismael Pérez / Tecnologías Intech'
+
+inputs:
+  github-pat:
+    description: "Personal Access Token to approve/merge the PR."
+    required: true
+  new-version:
+    description: "The new version to set in the code."
+    required: true
+  project-id:
+    description: "Project ID for status update."
+    required: true
+  deployment-id:
+    description: "Deployment ID for status update."
+    required: true
+  branch:
+    description: "The base branch for the PR (eg: main)."
+    required: false
+    default: 'main'
+  file-path:
+    description: "Path to the file where the version is updated (eg: .version)."
+    required: false
+    default: '.version'
+  github-token:
+    description: "Access token for GitHub API."
+    required: true
+  env-secret:
+    description: "The content of the .env secret for the build."
+    required: true
+  firebase-service-account:
+    description: "The content of the Firebase service account file."
+    required: true
+  firebase-dev:
+    description: "The Firebase dev project ID."
+    required: true
+  firebase-prod:
+    description: "The Firebase prod project ID."
+  sftp-credentials:
+    description: "Sftp  server@username:port"
+    required: true
+  sftp-local-path:
+    description: "Local path which folder will be taken for deployment"
+    required: false
+    default: dist/*
+  sftp-remote-path:
+    description: "Server path where folder will be placed"
+    required: true
+  ssh_private_key:
+    description: "SSH private key for sftp connection"
+    required: true
+  ssh_passphrase:
+    description: "Passphrase for SSH key"
+    required: true
+  update-version-url:
+    description: "Endpoint responsible for updating the version in the database."
+    required: true
+  ti-api:
+    description: "Endpoint responsible for updating deployment status."
+    required: true
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
